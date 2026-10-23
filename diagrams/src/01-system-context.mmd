@@ -1,0 +1,19 @@
+flowchart TD
+    D["Dispatcher"]
+    A["Analyst or fleet manager"]
+    P["Passenger"]
+
+    S["Intelligent Urban Transport Web Service"]
+
+    F["Historical transport files"]
+    T["External transport API"]
+    L["Language model provider"]
+
+    D -->|"Import data, start analysis, review events"| S
+    A -->|"View analytics and export results"| S
+    P -->|"Submit a transport report"| S
+
+    F -->|"Historical observations and reference data"| S
+    T -.->|"Current observations when access is available"| S
+    S -->|"Event facts and recommendation request"| L
+    L -->|"Suggested checks"| S

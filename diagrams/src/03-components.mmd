@@ -1,0 +1,35 @@
+flowchart TD
+    UI["React web interface"]
+
+    subgraph JAVA["Spring Boot application"]
+        direction TB
+        API["Application API and access control"]
+        JOB["Job coordinator and background import worker"]
+        REC["Recommendation module"]
+    end
+
+    DB[("PostgreSQL and PostGIS")]
+
+    subgraph PY["Python analysis component"]
+        direction TB
+        FAST["FastAPI internal API"]
+        WORK["Background analysis worker"]
+    end
+
+    LLM["Language model API"]
+    EXT["External transport API"]
+
+    UI -->|"Authenticated HTTP and JSON"| API
+    API -->|"Queries and application records"| DB
+
+    API -->|"Submit processing request"| JOB
+    JOB -->|"Persist imports, job state and configuration"| DB
+    JOB -->|"Dispatch analysis job"| FAST
+    FAST -->|"Start background execution"| WORK
+    WORK -->|"Read batches, report progress and results"| API
+
+    API -->|"Request suggested checks"| REC
+    REC -->|"Read event facts and save recommendation"| DB
+    REC -->|"Request and response"| LLM
+
+    EXT -.->|"Optional observation ingestion"| API
