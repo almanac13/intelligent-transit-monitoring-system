@@ -1,0 +1,35 @@
+flowchart TD
+    D["Dispatcher"]
+    A["Analyst or fleet manager"]
+    P["Passenger"]
+
+    subgraph SYS["Urban Transport Web Service"]
+        direction TB
+        U1(["Sign in"])
+        U2(["Import historical data"])
+        U3(["Configure and start analysis"])
+        U4(["Review events on map and in list"])
+        U5(["View analytics and filter results"])
+        U6(["Generate recommendations"])
+        U7(["Export event results"])
+        U8(["Submit passenger report"])
+        U9(["Review passenger reports"])
+    end
+
+    D --- U1
+    A --- U1
+    P --- U1
+
+    D --- U2
+    D --- U3
+    D --- U4
+    D --- U5
+    D --- U6
+    D --- U7
+    D --- U9
+
+    A --- U4
+    A --- U5
+    A --- U7
+
+    P --- U8
