@@ -6,6 +6,7 @@ Intelligent Transit Monitoring System. Their original numbering is preserved.
 | Document | Location |
 |---|---|
 | 01 — Project proposal | [Proposal](01-proposal.md) |
+| 02 — Evidence of relevance | [Relevance evidence](02-relevance-evidence.md) |
 | 03 — Literature review | [Literature review](03-literature-review.md) |
 | 04 — Existing system comparison | [Existing systems](04-existing-systems.md) |
 | 05 — Technology comparison | [Technology decisions](05-technology-comparison.md) |
@@ -21,7 +22,7 @@ The prototype files are available in `frontend/prototype/`.
 
 Architecture diagrams are embedded as Mermaid blocks in the architecture
 document, with editable sources under `diagrams/src/`. See the
-[diagram index](../diagrams/README.md) for all three views. `diagrams/exports/`
-is reserved for rendered diagrams.
+[diagram index](../diagrams/README.md) for all three views and readable SVG
+exports in `diagrams/exports/`.
 
 [Back to the project overview](../readme.md)
