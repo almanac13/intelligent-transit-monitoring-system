@@ -1,0 +1,24 @@
+{
+  "ignored": [
+    ".env",
+    "backend/.env.local",
+    "analysis/.env.production",
+    "config/service.key",
+    "config/service.pem",
+    "credentials.json",
+    "secrets/example.json",
+    "private/passengers.csv",
+    "data/raw/transport.csv",
+    "data/processed/transport.csv",
+    "backend/target/example.jar",
+    "frontend/node_modules/example/index.js",
+    "analysis/__pycache__/example.pyc",
+    ".cache/mermaid/puppeteer.json"
+  ],
+  "visible": [
+    "config/.env.example",
+    "docs/06-requirements.md",
+    "diagrams/exports/01-system-context.svg",
+    "package-lock.json"
+  ]
+}
